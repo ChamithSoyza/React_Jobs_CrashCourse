@@ -8,8 +8,15 @@ import AddJobPage from './pages/AddJobPage';
 
 
 const App = () => {
-  const addJob = (newJob) => {
-    console.log('addJobSubmit -> New Job ' + newJob);
+  const addJob = async (newJob) => {
+    const response = await fetch('/api/jobs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newJob),
+    });
+    return;
   }
   const router = createBrowserRouter(
     createRoutesFromElements(
