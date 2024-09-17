@@ -8,6 +8,8 @@ import AddJobPage from './pages/AddJobPage';
 
 
 const App = () => {
+
+  //ADD A NEW JOB
   const addJob = async (newJob) => {
     const response = await fetch('/api/jobs', {
       method: 'POST',
@@ -18,25 +20,26 @@ const App = () => {
     });
     return;
   }
+
+  //DELETE A JOB
+  const deleteJob = async (id) => {
+    const response = await fetch(`/api/jobs/${id}`, {
+      method: 'DELETE',
+    });
+    return;
+  }
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path='/jobs' element={<JobsPage />} />
-        <Route path='/jobs/:id' element={<JobPage />} loader={jobLoader} />
+        <Route path='/jobs/:id' element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} />
         <Route path='*' element={<PageNotFound />} />
         <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
       </Route>
     )
   );
   return <RouterProvider router={router} />
-  // <>
-  //   <Navbar />
-  //   <Hero />
-  //   <HomeCards />
-  //   <JobListings />
-  //   <ViewAllJobs />
-  // </>
 }
 
 export default App

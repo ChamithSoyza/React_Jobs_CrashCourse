@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "0be7",
-      "type": "Full-Time",
-      "title": "Test Job 1",
-      "description": "This is a test",
-      "salary": "Under $50K",
-      "location": "Colombo",
-      "company": {
-        "name": "ABC",
-        "description": "desc for the company ABC",
-        "contactEmail": "contactabc@ab.lk",
-        "contactPhone": "1234567891"
-      }
     }
   ]
 }
