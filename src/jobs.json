@@ -87,13 +87,13 @@
     {
       "id": "35c8",
       "type": "Full-Time",
-      "title": "a",
-      "description": "a",
-      "salary": "Under $50K",
-      "location": "a",
+      "title": "React Senior Developer",
+      "description": "sample description for SE",
+      "salary": "$80K - 90K",
+      "location": "Colombo",
       "company": {
-        "name": "a",
-        "description": "a",
+        "name": "Gynix",
+        "description": "DESC",
         "contactEmail": "contact@email.com",
         "contactPhone": "01114455222"
       }
