@@ -1,19 +1,21 @@
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const JobPage = ({deleteJob}) => {
+const JobPage = ({ deleteJob }) => {
     const { id } = useParams();
     const job = useLoaderData();
 
     const navigate = useNavigate();
 
-    const onClickDelete = (jobid) =>{
+    const onClickDelete = (jobid) => {
         const confirm = window.confirm('Are you sure you want to delete this listing?');
 
-        if(!confirm) return;
+        if (!confirm) return;
 
         deleteJob(jobid);
+        toast.success('Job Deleted!')
         navigate('/jobs');
     }
 
@@ -44,7 +46,7 @@ const JobPage = ({deleteJob}) => {
                                 <div
                                     className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
                                 >
-                                    <FaMapMarker className='text-lg text-orange-700 mr-1'/>
+                                    <FaMapMarker className='text-lg text-orange-700 mr-1' />
                                     <p className="text-orange-700">{job.location}</p>
                                 </div>
                             </div>
